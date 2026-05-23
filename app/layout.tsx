@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Leadspiray — Lead Distribution Platform",
   description:
     "Distribute service enquiries to providers with real-time quota tracking and fair round-robin allocation.",
+  icons: {
+    icon: "/Leadspiray_logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -30,22 +33,11 @@ export default function RootLayout({
               href="/request-service"
               className="flex items-center gap-2.5 shrink-0"
             >
-              <div className="flex h-6 w-6 items-center justify-center rounded bg-indigo-600">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 3.5h10M2 7h6M2 10.5h8"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
+              <img
+                src="/Leadspiray_logo.png"
+                alt="Leadspiray Logo"
+                className="h-6 w-6 object-contain"
+              />
               <span className="text-sm font-semibold tracking-tight text-white">
                 Leadspiray
               </span>
