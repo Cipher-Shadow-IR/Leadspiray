@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Service {
+  id              Int              @id
+  name            String           @unique
+  leads           Lead[]
+  allocationState AllocationState?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model Provider {
+  id           Int              @id
+  name         String           @unique
+  monthlyQuota Int              @default(10)
+  usedQuota    Int              @default(0)
+  assignments  LeadAssignment[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([usedQuota])
+}
+
+model Lead {
+  id          Int              @id @default(autoincrement())
+  name        String
+  phone       String
+  city        String
+  description String
+  serviceId   Int
+  service     Service          @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+  assignments LeadAssignment[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@unique([phone, serviceId])
+  @@index([serviceId])
+  @@index([createdAt])
+}
+
+model LeadAssignment {
+  id         Int      @id @default(autoincrement())
+  leadId     Int
+  providerId Int
+  lead       Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  provider   Provider @relation(fields: [providerId], references: [id], onDelete: Restrict)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([leadId, providerId])
+  @@index([providerId])
+}
+
+model AllocationState {
+  id        Int      @id @default(autoincrement())
+  serviceId Int      @unique
+  nextIndex Int      @default(0)
+  service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WebhookEvent {
+  id          Int      @id @default(autoincrement())
+  eventId     String   @unique
+  type        String
+  processedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+}
