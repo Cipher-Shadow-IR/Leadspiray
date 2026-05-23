@@ -10,7 +10,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Leadspire — Lead Distribution Platform",
+  title: "Leadspiray — Lead Distribution Platform",
   description:
     "Distribute service enquiries to providers with real-time quota tracking and fair round-robin allocation.",
 };
@@ -47,7 +47,7 @@ export default function RootLayout({
                 </svg>
               </div>
               <span className="text-sm font-semibold tracking-tight text-white">
-                Leadspire
+                Leadspiray
               </span>
             </Link>
 
@@ -67,7 +67,7 @@ export default function RootLayout({
         <footer className="border-t border-zinc-900">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-5 sm:px-6">
             <span className="text-xs text-zinc-600">
-              Leadspire · Built by{" "}
+              Leadspiray · Built by{" "}
               <a
                 href="https://github.com/Cipher-Shadow-IR"
                 target="_blank"

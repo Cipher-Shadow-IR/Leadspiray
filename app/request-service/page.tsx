@@ -33,7 +33,7 @@ export default async function RequestServicePage() {
             <ol className="space-y-3">
               {[
                 "Submit your service enquiry with contact details.",
-                "Leadspire matches your request to available providers.",
+                "Leadspiray matches your request to available providers.",
                 "Three providers are assigned instantly based on service type.",
                 "Providers are notified and will follow up directly.",
               ].map((step, i) => (

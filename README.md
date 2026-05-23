@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="public/Leadspire_logo.png" width="180" alt="Leadspire Logo" />
+  <img src="public/Leadspiray_logo.png" width="180" alt="Leadspiray Logo" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Cambria&size=28&duration=4000&color=6366F1&center=true&vCenter=true&width=1000&height=70&lines=Leadspire+%7C+Smart+Lead+Distribution" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Cambria&size=28&duration=4000&color=6366F1&center=true&vCenter=true&width=1000&height=70&lines=Leadspiray+%7C+Smart+Lead+Distribution" alt="Typing SVG" />
 </p>
 
 <h2 align="center">Intelligent provider allocation platform</h2>
@@ -21,10 +21,10 @@
 
 ---
 
-# Leadspire
+# Leadspiray
 
 > *Smart lead distribution for service-based businesses.*
-> **Leadspire** is a full-stack lead distribution platform where customers submit service requests and the system intelligently allocates leads to providers based on configurable business rules.
+> **Leadspiray** is a full-stack lead distribution platform where customers submit service requests and the system intelligently allocates leads to providers based on configurable business rules.
 > Designed with **Next.js App Router**, **PostgreSQL**, **Prisma ORM**, and **TypeScript** for speed, reliability, and production-grade concurrency.
 
 ---
@@ -67,7 +67,7 @@ This project solves a real operational challenge: **how to fairly distribute inc
 # 📂 Project Structure
 
 ```plaintext
-leadspire/
+leadspiray/
 ├── app/
 │   ├── api/
 │   │   ├── dashboard/         # Dashboard data & SSE stream
@@ -91,7 +91,7 @@ leadspire/
 │   ├── schema.prisma          # Database schema
 │   └── seed.ts                # Seed data (8 providers, 3 services)
 ├── public/
-│   ├── Leadspire_logo.png     # Brand logo
+│   ├── Leadspiray_logo.png     # Brand logo
 │   └── logo.svg               # SVG fallback
 ├── package.json
 ├── tailwind.config.ts
@@ -104,10 +104,10 @@ leadspire/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Cipher-Shadow-IR/leadspire.git
+git clone https://github.com/Cipher-Shadow-IR/leadspiray.git
 
 # Enter the project directory
-cd leadspire
+cd leadspiray
 
 # Install dependencies
 npm install
@@ -131,7 +131,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser. You'll be r
 Create a `.env` file in the project root:
 
 ```env
-DATABASE_URL=postgresql://user:password@host:5432/leadspire
+DATABASE_URL=postgresql://user:password@host:5432/leadspiray
 ```
 
 Copy from `.env.example`:
@@ -157,7 +157,7 @@ Add screenshots / GIFs here
 # 🧠 How It Works
 
 1. **Customer submits** an enquiry via the `/request-service` form (name, phone, city, service type, description).
-2. **Leadspire allocates** the lead to providers using a PostgreSQL-backed transaction:
+2. **Leadspiray allocates** the lead to providers using a PostgreSQL-backed transaction:
    - Acquires an advisory lock per service
    - Assigns mandatory providers from business rules
    - Fills remaining slots via round-robin from the fair pool
