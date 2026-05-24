@@ -142,18 +142,6 @@ cp .env.example .env
 
 ---
 
-# 📸 Screenshots
-
-```md
-Add screenshots / GIFs here
-```
-
-- **Request Service** — Customer enquiry form with service type selection
-- **Dashboard** — Live provider cards with quota bars and assigned leads
-- **Test Tools** — QA panel with quota reset, idempotency test, and concurrency test
-
----
-
 # 🧠 How It Works
 
 1. **Customer submits** an enquiry via the `/request-service` form (name, phone, city, service type, description).
@@ -209,20 +197,6 @@ curl -X POST http://localhost:3000/api/webhook/reset-quota \
 - Lead scoring and priority queuing
 - Analytics dashboard with charts
 - Webhook event replay and audit log
-
----
-
-# 🤝 Contributing
-
-Pull requests are welcome.
-
-Steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m "Add amazing feature"`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ---
 
